@@ -9,10 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="aim">
 
 <div class="grid-bg"></div>
 <div class="scanline"></div>
+<div id="xh" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i></div>
 
 <header class="topbar">
   <div class="topbar-inner">
@@ -21,8 +22,11 @@
       <a href="#about">about</a>
       <a href="#loadout">loadout</a>
       <a href="#profiles">profiles</a>
+      <a href="#aim">aim</a>
+      <a href="#donate">donate</a>
       <a href="#contact">contact</a>
     </nav>
+    <span class="uptime mono" id="up">uptime 00:00:00</span>
   </div>
 </header>
 
@@ -30,8 +34,8 @@
 
   <section class="hero" id="top">
     <div class="boot" id="bootLog"></div>
-    <h1 class="name">nut<span class="ext">.exe</span></h1>
-    <p class="role">นักพัฒนา สร้างเว็บไซต์ เขียนโปรแกรม เล่นเกม</p>
+    <h1 class="name" id="nm" data-text="nut.exe">nut<span class="ext">.exe</span></h1>
+    <p class="role">Gamer & Developer Dev Html JavaScript Css</p>
     <div class="hero-tags">
       <span class="tag">STATUS: ONLINE</span>
       <span class="tag">BASED IN: NO</span>
@@ -47,13 +51,13 @@
       </div>
     </div>
     <p class="about-body">
-      สวัสดีครับ ผมชื่อ <strong>Natthapat Suksawang Nut</strong> พอร์ตนี้เป็นพอร์ตที่โชว์ผลงานการเขียนโค้ด และสิ่งที่ชอบทำ หรืองานอดิเรก
-      ผมชอบเล่นเกมแนว <strong>VALORANT</strong> <strong> , </strong> <strong>PUBG</strong>  <strong> , </strong>  <strong>The Isle</strong>
+      สวัสดีครับ ชื่อ <strong>Natthapat Suksawang Nut</strong> พอร์ตนี้เป็นพอร์ตที่โชว์ผลงานการเขียนโค้ด และสิ่งที่ชอบทำ หรืองานอดิเรก
+      ชอบเล่นเกมแนว <strong>VALORANT</strong> <strong> , </strong> <strong>PUBG</strong>  <strong> , </strong>  <strong>The Isle</strong>
     </p>
     <div class="stats">
       <div class="stat"><div class="n mono">3</div><div class="l">เกมหลักที่เล่นประจำ</div></div>
       <div class="stat"><div class="n mono">24/7</div><div class="l">status: online</div></div>
-      <div class="stat"><div class="n mono">01</div><div class="l">พอร์ต — v1.2</div></div>
+      <div class="stat"><div class="n mono">01</div><div class="l">พอร์ต — v1.5</div></div>
     </div>
   </section>
 
@@ -77,7 +81,7 @@
         <div class="game-id mono">02</div>
         <div>
           <div class="game-name">VALORANT</div>
-          <div class="game-desc">แท็คติคอลชูตเตอร์ ต้องคิดก่อนยิง เล็งแม่น จบให้จบ</div>
+          <div class="game-desc">เกมหมา เดินไปยิง แต่ยิงไม่ตาย </div>
         </div>
         <div class="game-role">COMPETITIVE</div>
       </div>
@@ -85,7 +89,7 @@
         <div class="game-id mono">03</div>
         <div>
           <div class="game-name">PUBG</div>
-          <div class="game-desc">แบทเทิลรอยัล รอดให้ถึงวงสุดท้าย เป้าหมายเดียวคือ Winner Winner</div>
+          <div class="game-desc">เกมหมาอีกเกม ฟาร์มของไปแจก</div>
         </div>
         <div class="game-role">BATTLE ROYALE</div>
       </div>
@@ -163,10 +167,73 @@
     </div>
   </section>
 
+  <section id="aim">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num mono">04 / AIM TRAINER</div>
+        <h2 class="sec-title">ฝึก Aim</h2>
+      </div>
+    </div>
+    <div class="aim-stats mono">
+      <div><span id="aTime">20.0</span><small>วินาที</small></div>
+      <div><span id="aHits">0</span><small>ยิงโดน</small></div>
+      <div><span id="aAcc">--</span><small>แม่นยำ</small></div>
+      <div><span id="aRt">--</span><small>เฉลี่ย ms</small></div>
+      <div><span id="aBest">0</span><small>สถิติดีสุด</small></div>
+    </div>
+    <div class="arena" id="arena">
+      <div class="arena-msg" id="aMsg">
+        <div class="arena-title" id="aTitle">คลิกเป้าให้ได้มากที่สุดใน 20 วินาที</div>
+        <button class="sw mono" id="aStart" type="button">เริ่มเลย</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="donate">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num mono">05 / SUPPORT</div>
+        <h2 class="sec-title">Donate</h2>
+      </div>
+    </div>
+    <div class="don">
+      <div class="don-l">
+        <p class="don-text">หิวเงิน ใครใจดี กดเลขโอนมาเลย</p>
+        <div class="tiers" id="tiers" role="group" aria-label="เลือกจำนวน">
+          <button type="button" class="tier" data-amt="20">20฿<small>ค่ากาแฟ</small></button>
+          <button type="button" class="tier" data-amt="50">50฿<small>ค่าข้าว</small></button>
+          <button type="button" class="tier" data-amt="100">100฿<small>ค่าสกิน</small></button>
+        </div>
+        <div class="don-thanks mono" id="thanks">โอนมาตามใจอยาก</div>
+        <div class="don-id">
+          <span class="mono" id="pp">061-576-6576</span>
+          <button type="button" class="sw mono" id="copyPp">คัดลอกเลขพร้อมเพย์</button>
+        </div>
+      </div>
+      <div class="don-r">
+        <div class="qr art" id="qr">
+          <!-- ถ้าจะใช้ QR จริง: ลบ svg ข้างล่าง ใส่ <img src="qr.png" alt="PromptPay QR"> และลบคำว่า art ออกจาก class ของกล่องนี้ -->
+          <svg class="coin-art" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Insert coin">
+            <rect class="st" style="animation-delay:0s" x="24" y="30" width="4" height="4" fill="var(--cyan)"/><rect class="st" style="animation-delay:0.6s" x="164" y="24" width="4" height="4" fill="var(--cyan)"/><rect class="st" style="animation-delay:1.1s" x="40" y="126" width="4" height="4" fill="var(--cyan)"/><rect class="st" style="animation-delay:1.7s" x="156" y="118" width="4" height="4" fill="var(--cyan)"/><rect class="st" style="animation-delay:0.3s" x="176" y="70" width="4" height="4" fill="var(--cyan)"/><rect class="st" style="animation-delay:1.4s" x="18" y="78" width="4" height="4" fill="var(--cyan)"/>
+            <g class="coin-drop">
+              <circle cx="100" cy="52" r="20" fill="var(--amber)"/>
+              <circle cx="100" cy="52" r="14" fill="none" stroke="#8a641f" stroke-width="2.5"/>
+              <text x="100" y="60" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="800" font-size="22" fill="#0a0d10">&#3647;</text>
+            </g>
+            <rect x="46" y="104" width="108" height="40" rx="8" fill="var(--surface)" stroke="var(--line)" stroke-width="2"/>
+            <rect class="coin-slot" x="76" y="120" width="48" height="8" rx="4" fill="var(--amber)"/>
+            <text class="coin-txt" x="100" y="176" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="800" font-size="15" fill="var(--amber)">INSERT COIN</text>
+          </svg>
+        </div>
+        <div class="qr-cap mono">PRESS TO SUPPORT</div>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="sec-head">
       <div>
-        <div class="sec-num mono">04 / CONTACT</div>
+        <div class="sec-num mono">06 / CONTACT</div>
         <h2 class="sec-title">ติดต่อ</h2>
       </div>
     </div>
@@ -194,6 +261,7 @@
 
 <footer>
   <div class="mono">nut.exe © 2026 — process exited with code 0</div>
+  <button class="sw mono" id="tg" type="button">crosshair: on</button>
 </footer>
 
 <script src="script.js"></script>
