@@ -187,6 +187,7 @@
     display: flex; flex-direction: column; gap: 10px;
     transition: border-color 0.18s, transform 0.18s;
   }
+  a.proj-card { color: inherit; text-decoration: none; }
   .proj-card:hover { border-color: var(--amber-dim); transform: translateY(-2px); }
   .proj-status { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--text-faint); }
   .proj-title { font-weight: 700; font-size: 16.5px; }
@@ -236,3 +237,48 @@
   @media (prefers-reduced-motion: reduce) {
     .boot-line, .brand .dot, .cursor-blink { animation: none !important; opacity: 1 !important; }
   }
+
+  a.proj-card:focus-visible, .link-btn:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+
+  /* PROFILE CARDS */
+  .pf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 620px) { .pf-grid { grid-template-columns: 1fr; } }
+  .pf-card { color: inherit; text-decoration: none; transition: border-color 0.18s; --accent: var(--amber); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface); display: flex; flex-direction: column; }
+  .pf-banner { height: 64px; background: linear-gradient(120deg, var(--accent), var(--surface-2) 85%); opacity: 0.9; position: relative; }
+  .pf-plat { position: absolute; right: 12px; top: 10px; font-size: 11px; color: #0a0d10; background: rgba(255,255,255,0.85); padding: 3px 8px; border-radius: 3px; font-weight: 700; }
+  .pf-body { padding: 0 20px 20px; display: flex; flex-direction: column; gap: 14px; flex-grow: 1; }
+  .pf-head { display: flex; align-items: flex-start; gap: 14px; }
+  .pf-avatar { position: relative; width: 64px; height: 64px; border-radius: 12px; border: 3px solid var(--surface); background: var(--surface-2); outline: 2px solid var(--accent); display: grid; place-items: center; font: 800 26px 'JetBrains Mono', monospace; color: var(--accent); flex-shrink: 0; margin-top: -30px; }
+  .pf-dot { position: absolute; right: -6px; bottom: -6px; width: 14px; height: 14px; border-radius: 50%; background: #3ddc84; border: 3px solid var(--surface); }
+  .pf-id { min-width: 0; padding-top: 10px; }
+  .pf-name { font-weight: 700; font-size: 17px; overflow-wrap: anywhere; }
+  .pf-handle { font-size: 11px; color: var(--text-faint); overflow-wrap: anywhere; }
+  .pf-status { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 13px; color: var(--text-dim); }
+  .pf-state { font-size: 11px; color: #3ddc84; border: 1px solid rgba(61,220,132,0.4); padding: 2px 8px; border-radius: 20px; }
+  .pf-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .pf-stat { background: var(--bg-alt); border: 1px solid var(--line); border-radius: 6px; padding: 10px 8px; text-align: center; }
+  .pf-stat .n { font-size: 15px; font-weight: 700; color: var(--accent); }
+  .pf-stat .l { font-size: 11px; color: var(--text-dim); margin-top: 2px; }
+  .pf-card:hover, .pf-card:focus-visible { border-color: var(--accent); outline: none; }
+  .pf-top { margin-top: auto; display: flex; flex-direction: column; gap: 8px; }
+  .pf-top-label { font-size: 11px; color: var(--text-faint); }
+  .pf-bar { display: grid; grid-template-columns: 84px 1fr; align-items: center; gap: 10px; font-size: 12.5px; color: var(--text-dim); }
+  .pf-bar-track { height: 6px; border-radius: 3px; background: var(--bg-alt); border: 1px solid var(--line); overflow: hidden; display: block; }
+  .pf-bar-track i { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+  .pf-bio { font-size: 13px; line-height: 1.6; color: var(--text-dim); }
+  .pf-roles { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pf-role { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-dim); background: var(--bg-alt); border: 1px solid var(--line); border-radius: 20px; padding: 3px 10px 3px 8px; }
+  .pf-role i { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+  .pf-recent { display: flex; flex-direction: column; }
+  .pf-rrow { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 12.5px; color: var(--text-dim); padding: 7px 0; border-bottom: 1px dashed var(--line); }
+  .pf-rrow:last-child { border-bottom: none; }
+  .pf-rrow b { font-size: 12px; font-weight: 500; color: var(--accent); white-space: nowrap; }
+  .pf-form { display: flex; gap: 6px; }
+  .pf-m { flex: 1; max-width: 44px; height: 34px; display: grid; place-items: center; border-radius: 5px; font: 700 12px 'JetBrains Mono', monospace; border: 1px solid; }
+  .pf-m.w { color: #3ddc84; border-color: rgba(61,220,132,0.45); background: rgba(61,220,132,0.08); }
+  .pf-m.l { color: var(--accent); border-color: rgba(255,70,85,0.45); background: rgba(255,70,85,0.08); }
+  .pf-note { font-size: 11.5px; color: var(--text-faint); }
+  .pf-slots { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .pf-slot { background: var(--bg-alt); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 4px; padding: 8px 10px; font-size: 13px; font-weight: 600; color: var(--text); }
+  .pf-slot small { display: block; font-size: 10px; font-weight: 400; color: var(--text-faint); margin-bottom: 2px; }
+  .pf-logo { width: 34px; height: 34px; }
